@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ============================================================ -->
+    <!-- Pleos Design System — Widget Styles                          -->
+    <!-- ============================================================ -->
+
+    <!-- ===== Shape Appearances ===== -->
+
+    <style name="ShapeAppearance.Pleos.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/pleos_radius_xs</item>
+    </style>
+
+    <style name="ShapeAppearance.Pleos.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/pleos_radius_sm</item>
+    </style>
+
+    <style name="ShapeAppearance.Pleos.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/pleos_radius_lg</item>
+    </style>
+
+    <style name="ShapeAppearance.Pleos.Pill" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearance.Pleos.Full" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/pleos_radius_full</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- BUTTONS — Basic Button (Primary)                             -->
+    <!-- Primary = light bg (#131417 5%), dark text — DEFAULT         -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.Button" parent="Widget.Material3.Button">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Pill</item>
+        <item name="backgroundTint">@color/pleos_btn_primary_bg</item>
+        <item name="android:textColor">@color/pleos_btn_primary_text</item>
+        <item name="iconTint">@color/pleos_btn_primary_text</item>
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Body.Medium.Strong</item>
+        <item name="android:minHeight">@dimen/pleos_btn_height_md</item>
+        <item name="android:paddingStart">@dimen/pleos_btn_padding_horizontal_md</item>
+        <item name="android:paddingEnd">@dimen/pleos_btn_padding_horizontal_md</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="iconSize">@dimen/pleos_icon_md</item>
+        <item name="iconPadding">@dimen/pleos_spacing_sm</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Widget.Pleos.Button.Large">
+        <item name="android:minHeight">@dimen/pleos_btn_height_lg</item>
+        <item name="android:paddingStart">@dimen/pleos_btn_padding_horizontal_lg</item>
+        <item name="android:paddingEnd">@dimen/pleos_btn_padding_horizontal_lg</item>
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Body.Large.Strong</item>
+    </style>
+
+    <style name="Widget.Pleos.Button.Small">
+        <item name="android:minHeight">@dimen/pleos_btn_height_sm</item>
+        <item name="android:paddingStart">@dimen/pleos_btn_padding_horizontal_sm</item>
+        <item name="android:paddingEnd">@dimen/pleos_btn_padding_horizontal_sm</item>
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Label.Medium</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- BUTTONS — Basic Button (Secondary)                           -->
+    <!-- Secondary = dark bg (#44464E), white text                    -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.Button.Secondary" parent="Widget.Material3.Button">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Pill</item>
+        <item name="backgroundTint">@color/pleos_btn_secondary_bg</item>
+        <item name="android:textColor">@color/pleos_btn_secondary_text</item>
+        <item name="iconTint">@color/pleos_btn_secondary_text</item>
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Body.Medium.Strong</item>
+        <item name="android:minHeight">@dimen/pleos_btn_height_md</item>
+        <item name="android:paddingStart">@dimen/pleos_btn_padding_horizontal_md</item>
+        <item name="android:paddingEnd">@dimen/pleos_btn_padding_horizontal_md</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="iconSize">@dimen/pleos_icon_md</item>
+        <item name="iconPadding">@dimen/pleos_spacing_sm</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Widget.Pleos.Button.Secondary.Large">
+        <item name="android:minHeight">@dimen/pleos_btn_height_lg</item>
+        <item name="android:paddingStart">@dimen/pleos_btn_padding_horizontal_lg</item>
+        <item name="android:paddingEnd">@dimen/pleos_btn_padding_horizontal_lg</item>
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Body.Large.Strong</item>
+    </style>
+
+    <style name="Widget.Pleos.Button.Secondary.Small">
+        <item name="android:minHeight">@dimen/pleos_btn_height_sm</item>
+        <item name="android:paddingStart">@dimen/pleos_btn_padding_horizontal_sm</item>
+        <item name="android:paddingEnd">@dimen/pleos_btn_padding_horizontal_sm</item>
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Label.Medium</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- BUTTONS — Text Button                                        -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Pill</item>
+        <item name="android:textColor">@color/pleos_btn_text_color</item>
+        <item name="iconTint">@color/pleos_btn_text_color</item>
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Body.Medium.Strong</item>
+        <item name="android:minHeight">@dimen/pleos_btn_height_md</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="iconSize">@dimen/pleos_icon_md</item>
+        <item name="iconPadding">@dimen/pleos_spacing_sm</item>
+    </style>
+
+    <style name="Widget.Pleos.Button.Text.Small">
+        <item name="android:minHeight">@dimen/pleos_btn_height_sm</item>
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Label.Medium</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- BUTTONS — Icon Button                                        -->
+    <!-- ============================================================ -->
+
+    <!-- Basic (has background, pill shape) -->
+    <style name="Widget.Pleos.IconButton" parent="Widget.Material3.Button.IconButton.Filled.Tonal">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Pill</item>
+        <item name="backgroundTint">@color/pleos_btn_primary_bg</item>
+        <item name="iconTint">@color/pleos_icon_btn_tint</item>
+        <item name="iconSize">@dimen/pleos_icon_md</item>
+        <item name="android:minWidth">@dimen/pleos_icon_btn_md</item>
+        <item name="android:minHeight">@dimen/pleos_icon_btn_md</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="Widget.Pleos.IconButton.Large">
+        <item name="android:minWidth">@dimen/pleos_icon_btn_lg</item>
+        <item name="android:minHeight">@dimen/pleos_icon_btn_lg</item>
+        <item name="iconSize">@dimen/pleos_icon_lg</item>
+    </style>
+
+    <style name="Widget.Pleos.IconButton.Small">
+        <item name="android:minWidth">@dimen/pleos_icon_btn_sm</item>
+        <item name="android:minHeight">@dimen/pleos_icon_btn_sm</item>
+        <item name="iconSize">@dimen/pleos_icon_sm</item>
+    </style>
+
+    <!-- Plain (no background) -->
+    <style name="Widget.Pleos.IconButton.Plain" parent="Widget.Material3.Button.IconButton">
+        <item name="iconTint">@color/pleos_icon_btn_tint</item>
+        <item name="iconSize">@dimen/pleos_icon_md</item>
+        <item name="android:minWidth">@dimen/pleos_icon_btn_md</item>
+        <item name="android:minHeight">@dimen/pleos_icon_btn_md</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- Circle -->
+    <style name="Widget.Pleos.IconButton.Circle" parent="Widget.Material3.Button.IconButton.Filled.Tonal">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Full</item>
+        <item name="backgroundTint">@color/pleos_btn_primary_bg</item>
+        <item name="iconTint">@color/pleos_icon_btn_tint</item>
+        <item name="iconSize">@dimen/pleos_icon_md</item>
+        <item name="android:minWidth">@dimen/pleos_icon_btn_md</item>
+        <item name="android:minHeight">@dimen/pleos_icon_btn_md</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- TOGGLE — MaterialButtonToggleGroup                           -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.ToggleGroup" parent="Widget.Material3.MaterialButtonToggleGroup">
+        <item name="singleSelection">true</item>
+        <item name="selectionRequired">true</item>
+    </style>
+
+    <style name="Widget.Pleos.ToggleButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Pill</item>
+        <item name="strokeColor">@color/basic_200</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/pleos_btn_text_color</item>
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Body.Medium.Strong</item>
+        <item name="android:minHeight">@dimen/pleos_btn_height_md</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- BUTTONS — Pill Tab Toggle (Track Select tabs)                 -->
+    <!-- Selected = green fill, dark text / Unselected = outline, gray -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.ToggleButton.Pill" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Full</item>
+        <item name="backgroundTint">@color/pleos_tab_pill_bg</item>
+        <item name="android:textColor">@color/pleos_tab_pill_text</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Label.Medium</item>
+        <item name="android:minHeight">@dimen/pleos_btn_height_md</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:checkable">true</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- TEXT FIELD — TextInputLayout                                  -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Medium</item>
+        <item name="boxStrokeColor">@color/pleos_textfield_stroke</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxBackgroundColor">@color/textfield_background</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Pleos.Label.Small</item>
+        <item name="errorTextAppearance">@style/TextAppearance.Pleos.Label.Small</item>
+        <item name="boxStrokeErrorColor">@color/call_end_normal</item>
+    </style>
+
+    <style name="Widget.Pleos.TextInputLayout.Small">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Small</item>
+    </style>
+
+    <style name="Widget.Pleos.TextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textAppearance">@style/TextAppearance.Pleos.Body.Medium</item>
+        <item name="android:textColor">@color/text_dark_primary</item>
+        <item name="android:textColorHint">@color/text_dark_tertiary</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- SWITCH                                                       -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="thumbTint">@color/pleos_switch_thumb</item>
+        <item name="trackTint">@color/pleos_switch_track</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- CHECKBOX                                                     -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.Checkbox" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="buttonTint">@color/pleos_checkbox_tint</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- RADIO BUTTON                                                 -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.RadioButton" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="buttonTint">@color/pleos_radio_tint</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- SLIDER / Controller                                          -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.Slider" parent="Widget.Material3.Slider">
+        <item name="thumbRadius">@dimen/pleos_slider_thumb_radius</item>
+        <item name="thumbColor">@color/basic_800</item>
+        <item name="trackHeight">@dimen/pleos_slider_track_height</item>
+        <item name="trackColorActive">@color/pleos_slider_track_active</item>
+        <item name="trackColorInactive">@color/pleos_slider_track_inactive</item>
+        <item name="haloColor">@color/alpha_dark_100</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- TAB LAYOUT — Segmented Menu                                  -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.TabLayout" parent="Widget.Material3.TabLayout">
+        <item name="tabTextColor">@color/pleos_tab_text</item>
+        <item name="tabIconTint">@color/pleos_tab_icon</item>
+        <item name="tabIndicatorColor">@color/basic_800</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabTextAppearance">@style/TextAppearance.Pleos.Body.Medium.Strong</item>
+        <item name="tabMinWidth">0dp</item>
+        <item name="tabPaddingStart">@dimen/pleos_spacing_lg</item>
+        <item name="tabPaddingEnd">@dimen/pleos_spacing_lg</item>
+    </style>
+
+    <style name="Widget.Pleos.TabLayout.Fitted">
+        <item name="tabGravity">fill</item>
+        <item name="tabMode">fixed</item>
+    </style>
+
+    <style name="Widget.Pleos.TabLayout.Scrollable">
+        <item name="tabGravity">start</item>
+        <item name="tabMode">scrollable</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- CARD — Surface container                                     -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Large</item>
+        <item name="cardBackgroundColor">@color/background_secondary</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <style name="Widget.Pleos.CardView.Flat" parent="Widget.Material3.CardView.Filled">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Medium</item>
+        <item name="cardBackgroundColor">@color/background_secondary</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/basic_200</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- POPUP — Dialog / System Popup                                -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearance">@style/ShapeAppearance.Pleos.Large</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/TextAppearance.Pleos.Title.Medium</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/TextAppearance.Pleos.Body.Medium</item>
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- DROPDOWN — Popup Menu                                        -->
+    <!-- ============================================================ -->
+
+    <style name="Widget.Pleos.PopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@color/background_popup</item>
+    </style>
+
+</resources>

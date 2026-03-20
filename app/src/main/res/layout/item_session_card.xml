@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="session"
+            type="io.github.bbang208.spirit.data.source.local.db.entity.SessionEntity" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/pleos_spacing_sm"
+        app:cardCornerRadius="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_session_card"
+            android:paddingStart="@dimen/pleos_spacing_xl"
+            android:paddingTop="@dimen/pleos_spacing_lg"
+            android:paddingEnd="@dimen/pleos_spacing_xl"
+            android:paddingBottom="@dimen/pleos_spacing_lg">
+
+            <!-- Track name (left-top) -->
+            <TextView
+                android:id="@+id/tv_track_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/pleos_spacing_md"
+                android:textAppearance="@style/TextAppearance.Pleos.Body.Medium"
+                android:textColor="@color/text_dark_primary"
+                app:layout_constraintEnd_toStartOf="@id/tv_best_time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Inje Speedium" />
+
+            <!-- Date (left-bottom) -->
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pleos_spacing_xs"
+                android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                android:textColor="@color/text_dark_tertiary"
+                app:layout_constraintEnd_toStartOf="@id/tv_best_lap_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_track_name"
+                tools:text="Mar 18, 2026" />
+
+            <!-- Best lap time (right-top, green) -->
+            <TextView
+                android:id="@+id/tv_best_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Pleos.Body.Large.Strong"
+                android:textColor="@color/informative_active"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1:42.318" />
+
+            <!-- "Best lap" label (right-bottom) -->
+            <TextView
+                android:id="@+id/tv_best_lap_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pleos_spacing_xs"
+                android:text="@string/best_lap_label"
+                android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                android:textColor="@color/text_dark_tertiary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_best_time" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

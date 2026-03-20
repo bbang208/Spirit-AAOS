@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="160dp"
+    android:viewportWidth="160"
+    android:viewportHeight="160">
+    <!-- Outer dark ring / shadow -->
+    <path
+        android:fillColor="#1A02C265"
+        android:pathData="M80,0C124.183,0 160,35.817 160,80C160,124.183 124.183,160 80,160C35.817,160 0,124.183 0,80C0,35.817 35.817,0 80,0Z" />
+    <!-- Green circle -->
+    <path
+        android:fillColor="#02C265"
+        android:pathData="M80,16C115.346,16 144,44.654 144,80C144,115.346 115.346,144 80,144C44.654,144 16,115.346 16,80C16,44.654 44.654,16 80,16Z" />
+    <!-- White play triangle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M68,56L108,80L68,104Z" />
+</vector>

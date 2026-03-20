@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.github.bbang208.spirit.ui.settings.SettingsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xl"
+            android:layout_marginTop="@dimen/pleos_spacing_xl"
+            android:text="@string/title_settings"
+            android:textAppearance="@style/TextAppearance.Pleos.Title.Small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Speed unit -->
+        <TextView
+            android:id="@+id/tv_speed_unit_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xl"
+            android:layout_marginTop="@dimen/pleos_spacing_xxxl"
+            android:text="@string/speed_unit"
+            android:textAppearance="@style/TextAppearance.Pleos.Body.Large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggle_speed_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/pleos_spacing_xl"
+            app:checkedButton="@id/btn_kmh"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_speed_unit_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_kmh"
+                style="@style/Widget.Pleos.ToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unit_kmh" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_mph"
+                style="@style/Widget.Pleos.ToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unit_mph" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

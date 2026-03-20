@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.github.bbang208.spirit.ui.detail.SessionDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary">
+
+        <!-- Header card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_header"
+            style="@style/Widget.Pleos.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/pleos_spacing_xl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/pleos_spacing_xl">
+
+                <TextView
+                    android:id="@+id/tv_track_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Pleos.Title.Small" />
+
+                <TextView
+                    android:id="@+id/tv_session_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pleos_spacing_xs"
+                    android:textAppearance="@style/TextAppearance.Pleos.Body.Medium"
+                    android:textColor="@color/text_dark_secondary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pleos_spacing_md"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_total_laps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.Pleos.Body.Large" />
+
+                    <TextView
+                        android:id="@+id/tv_best_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.Pleos.Body.Large.Strong"
+                        android:textColor="@color/switch_on" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Lap list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_laps"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/pleos_spacing_xl"
+            android:layout_marginTop="@dimen/pleos_spacing_md"
+            android:layout_marginEnd="@dimen/pleos_spacing_xl"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toTopOf="@id/btn_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_header"
+            tools:listitem="@layout/item_lap_row" />
+
+        <!-- Delete button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_delete"
+            style="@style/Widget.Pleos.Button.Secondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/pleos_spacing_xl"
+            android:minHeight="125dp"
+            android:text="@string/delete_session"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

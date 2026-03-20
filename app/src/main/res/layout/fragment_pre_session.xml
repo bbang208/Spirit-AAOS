@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.github.bbang208.spirit.ui.presession.PreSessionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary">
+
+        <!-- Left: Track map -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <FrameLayout
+            android:id="@+id/track_map_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/pleos_spacing_xl"
+            android:background="@color/background_secondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <io.github.bbang208.spirit.ui.widget.TrackMapView
+                android:id="@+id/track_map_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <!-- Right: Settings panel -->
+
+        <!-- Track name -->
+        <TextView
+            android:id="@+id/tv_track_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xl"
+            android:layout_marginTop="@dimen/pleos_spacing_xl"
+            android:layout_marginEnd="@dimen/pleos_spacing_xl"
+            android:textAppearance="@style/TextAppearance.Pleos.Title.Small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Track length -->
+        <TextView
+            android:id="@+id/tv_track_length"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xl"
+            android:layout_marginTop="@dimen/pleos_spacing_xs"
+            android:textAppearance="@style/TextAppearance.Pleos.Body.Medium.Strong"
+            android:textColor="@color/switch_on"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_track_name" />
+
+        <TextView
+            android:id="@+id/tv_settings_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xl"
+            android:layout_marginTop="@dimen/pleos_spacing_xxl"
+            android:text="@string/session_settings"
+            android:textAppearance="@style/TextAppearance.Pleos.Title.Small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_track_length" />
+
+        <!-- Sector count with stepper -->
+        <TextView
+            android:id="@+id/tv_sectors_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xl"
+            android:layout_marginTop="@dimen/pleos_spacing_xxxl"
+            android:text="@string/sector_count"
+            android:textAppearance="@style/TextAppearance.Pleos.Body.Large"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_settings_title" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sector_plus"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="@dimen/pleos_icon_btn_md"
+            android:layout_height="@dimen/pleos_icon_btn_md"
+            android:layout_marginEnd="@dimen/pleos_spacing_xl"
+            android:text="+"
+            android:textAppearance="@style/TextAppearance.Pleos.Title.Small"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sectors_label"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_sector_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="40dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.Pleos.Body.Large.Strong"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sectors_label"
+            app:layout_constraintEnd_toStartOf="@id/btn_sector_plus" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sector_minus"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="@dimen/pleos_icon_btn_md"
+            android:layout_height="@dimen/pleos_icon_btn_md"
+            android:text="-"
+            android:textAppearance="@style/TextAppearance.Pleos.Title.Small"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sectors_label"
+            app:layout_constraintEnd_toStartOf="@id/tv_sector_value" />
+
+        <!-- Ghost mode switch -->
+        <TextView
+            android:id="@+id/tv_ghost_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xl"
+            android:layout_marginTop="@dimen/pleos_spacing_xl"
+            android:text="@string/ghost_mode"
+            android:textAppearance="@style/TextAppearance.Pleos.Body.Large"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_sectors_label" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_ghost"
+            style="@style/Widget.Pleos.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/pleos_spacing_xl"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_ghost_label"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- GO button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go"
+            style="@style/Widget.Pleos.Button.Secondary.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xl"
+            android:layout_marginEnd="@dimen/pleos_spacing_xl"
+            android:layout_marginBottom="@dimen/pleos_spacing_xl"
+            android:minHeight="125dp"
+            android:text="@string/go"
+            android:textAppearance="@style/TextAppearance.Pleos.Headline.Small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

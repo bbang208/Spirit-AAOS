@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Pleos Design System Dimensions ===== -->
+
+    <!-- Corner Radius -->
+    <dimen name="pleos_radius_xs">8dp</dimen>
+    <dimen name="pleos_radius_sm">12dp</dimen>
+    <dimen name="pleos_radius_md">16dp</dimen>
+    <dimen name="pleos_radius_lg">20dp</dimen>
+    <dimen name="pleos_radius_xl">25dp</dimen>
+    <dimen name="pleos_radius_full">999dp</dimen>
+
+    <!-- Spacing -->
+    <dimen name="pleos_spacing_xxs">2dp</dimen>
+    <dimen name="pleos_spacing_xs">4dp</dimen>
+    <dimen name="pleos_spacing_sm">8dp</dimen>
+    <dimen name="pleos_spacing_md">12dp</dimen>
+    <dimen name="pleos_spacing_lg">16dp</dimen>
+    <dimen name="pleos_spacing_xl">20dp</dimen>
+    <dimen name="pleos_spacing_xxl">24dp</dimen>
+    <dimen name="pleos_spacing_xxxl">32dp</dimen>
+
+    <!-- Button Heights (3 sizes matching Toggle/Icon Button) -->
+    <dimen name="pleos_btn_height_lg">64dp</dimen>
+    <dimen name="pleos_btn_height_md">52dp</dimen>
+    <dimen name="pleos_btn_height_sm">40dp</dimen>
+
+    <!-- Button Horizontal Padding -->
+    <dimen name="pleos_btn_padding_horizontal_lg">28dp</dimen>
+    <dimen name="pleos_btn_padding_horizontal_md">24dp</dimen>
+    <dimen name="pleos_btn_padding_horizontal_sm">16dp</dimen>
+
+    <!-- Icon Button Size -->
+    <dimen name="pleos_icon_btn_lg">64dp</dimen>
+    <dimen name="pleos_icon_btn_md">52dp</dimen>
+    <dimen name="pleos_icon_btn_sm">40dp</dimen>
+
+    <!-- Icon Sizes -->
+    <dimen name="pleos_icon_sm">20dp</dimen>
+    <dimen name="pleos_icon_md">24dp</dimen>
+    <dimen name="pleos_icon_lg">32dp</dimen>
+
+    <!-- TextField -->
+    <dimen name="pleos_textfield_height_md">56dp</dimen>
+    <dimen name="pleos_textfield_height_sm">44dp</dimen>
+
+    <!-- Toast -->
+    <dimen name="pleos_toast_padding">24dp</dimen>
+    <dimen name="pleos_toast_max_width">792dp</dimen>
+    <dimen name="pleos_toast_text_max_width">712dp</dimen>
+
+    <!-- Popup -->
+    <dimen name="pleos_popup_padding">32dp</dimen>
+
+    <!-- Slider -->
+    <dimen name="pleos_slider_thumb_radius">14dp</dimen>
+    <dimen name="pleos_slider_track_height">6dp</dimen>
+</resources>

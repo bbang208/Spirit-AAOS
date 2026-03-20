@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Pleos Design System Theme — auto Light/Dark via DayNight -->
+    <style name="Theme.Spirit" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary (Green accent) -->
+        <item name="colorPrimary">@color/informative_active</item>
+        <item name="colorOnPrimary">@color/text_light_primary</item>
+        <item name="colorPrimaryContainer">@color/charging_normal</item>
+        <item name="colorOnPrimaryContainer">@color/text_dark_primary</item>
+
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/button_filled_enabled</item>
+        <item name="colorOnSecondary">@color/text_light_primary</item>
+        <item name="colorSecondaryContainer">@color/surface_high</item>
+        <item name="colorOnSecondaryContainer">@color/text_dark_primary</item>
+
+        <!-- Tertiary -->
+        <item name="colorTertiary">@color/informative_autonomous_driving</item>
+        <item name="colorOnTertiary">@color/text_light_primary</item>
+        <item name="colorTertiaryContainer">@color/surface_accent</item>
+        <item name="colorOnTertiaryContainer">@color/text_dark_primary</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/call_end_normal</item>
+        <item name="colorOnError">@color/text_light_primary</item>
+        <item name="colorErrorContainer">@color/informative_negative</item>
+        <item name="colorOnErrorContainer">@color/text_light_primary</item>
+
+        <!-- Background / Surface — using semantic tokens -->
+        <item name="android:colorBackground">@color/background_primary</item>
+        <item name="colorOnBackground">@color/text_dark_primary</item>
+        <item name="colorSurface">@color/surface_basic</item>
+        <item name="colorOnSurface">@color/text_dark_primary</item>
+        <item name="colorSurfaceVariant">@color/surface_low</item>
+        <item name="colorOnSurfaceVariant">@color/text_dark_secondary</item>
+        <item name="colorSurfaceContainerLow">@color/surface_low</item>
+        <item name="colorSurfaceContainer">@color/surface_high</item>
+        <item name="colorSurfaceContainerHigh">@color/surface_accent</item>
+
+        <!-- Outline -->
+        <item name="colorOutline">@color/divider_tertiary</item>
+        <item name="colorOutlineVariant">@color/divider_secondary</item>
+
+        <!-- Inverse -->
+        <item name="colorSurfaceInverse">@color/surface_container</item>
+        <item name="colorOnSurfaceInverse">@color/text_light_primary</item>
+        <item name="colorPrimaryInverse">@color/charging_normal</item>
+
+        <!-- System bars: transparent for edge-to-edge -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- Default widget styles -->
+        <item name="materialButtonStyle">@style/Widget.Pleos.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.Pleos.Button.Secondary</item>
+        <item name="materialButtonToggleGroupStyle">@style/Widget.Pleos.ToggleGroup</item>
+        <item name="textInputStyle">@style/Widget.Pleos.TextInputLayout</item>
+        <item name="materialSwitchStyle">@style/Widget.Pleos.Switch</item>
+        <item name="checkboxStyle">@style/Widget.Pleos.Checkbox</item>
+        <item name="radioButtonStyle">@style/Widget.Pleos.RadioButton</item>
+        <item name="sliderStyle">@style/Widget.Pleos.Slider</item>
+        <item name="tabStyle">@style/Widget.Pleos.TabLayout</item>
+        <item name="materialCardViewStyle">@style/Widget.Pleos.CardView</item>
+        <item name="materialAlertDialogTheme">@style/Widget.Pleos.Dialog</item>
+        <item name="popupMenuStyle">@style/Widget.Pleos.PopupMenu</item>
+
+        <!-- Shape system -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Pleos.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Pleos.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Pleos.Large</item>
+    </style>
+
+</resources>

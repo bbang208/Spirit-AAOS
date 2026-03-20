@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ================================================================ -->
+    <!-- Pleos Design System — Dark Mode Overrides                        -->
+    <!-- Only tokens whose value differs from Light mode.                 -->
+    <!-- Tokens using @color/ refs to same-mode base tokens auto-resolve  -->
+    <!-- and do NOT need overrides here.                                  -->
+    <!-- ================================================================ -->
+
+    <!-- ===== Base Token Overrides ===== -->
+
+    <!-- Basic (Grayscale) — inverted -->
+    <color name="basic_00">#131417</color>
+    <color name="basic_50">#1D1E21</color>
+    <color name="basic_100">#313236</color>
+    <color name="basic_200">#44464E</color>
+    <color name="basic_300">#686A72</color>
+    <!-- basic_400 = #A4A8AE — same in both modes -->
+    <color name="basic_500">#C7C9CE</color>
+    <color name="basic_600">#E0E1E6</color>
+    <color name="basic_700">#EDEEF2</color>
+    <color name="basic_800">#F7F8FA</color>
+    <color name="basic_900">#FFFFFF</color>
+
+    <!-- Alpha / Dark — inverted to white-based -->
+    <color name="alpha_dark_50">#0DFFFFFF</color>
+    <color name="alpha_dark_100">#1AFFFFFF</color>
+    <color name="alpha_dark_200">#33FFFFFF</color>
+    <color name="alpha_dark_300">#4DFFFFFF</color>
+    <color name="alpha_dark_400">#66FFFFFF</color>
+    <color name="alpha_dark_500">#80FFFFFF</color>
+
+    <!-- Alpha / Light — inverted to dark-based -->
+    <color name="alpha_light_50">#0D131417</color>
+    <color name="alpha_light_100">#1A131417</color>
+    <color name="alpha_light_200">#33131417</color>
+    <color name="alpha_light_300">#4D131417</color>
+    <color name="alpha_light_400">#66131417</color>
+    <color name="alpha_light_500">#80131417</color>
+
+    <!-- ===== Semantic Token Overrides (different base per mode) ===== -->
+
+    <!-- Text / Dark → light text on dark backgrounds -->
+    <color name="text_dark_primary">#FFFFFF</color>
+    <color name="text_dark_secondary">#D6FFFFFF</color>
+    <color name="text_dark_tertiary">#A3FFFFFF</color>
+    <color name="text_dark_quaternary">#52FFFFFF</color>
+
+    <!-- Text / Light → dark text on light elements -->
+    <color name="text_light_primary">#131417</color>
+    <color name="text_light_secondary">#D6131417</color>
+    <color name="text_light_tertiary">#A3131417</color>
+    <color name="text_light_quaternary">#52131417</color>
+
+    <!-- Icon / Dark → inverted -->
+    <color name="icon_dark_primary">#FFFFFF</color>
+    <color name="icon_dark_secondary">#D6FFFFFF</color>
+    <color name="icon_dark_tertiary">#A3FFFFFF</color>
+    <color name="icon_dark_quaternary">#52FFFFFF</color>
+
+    <!-- Icon / Light → inverted -->
+    <color name="icon_light_primary">#131417</color>
+    <color name="icon_light_secondary">#D6131417</color>
+    <color name="icon_light_tertiary">#A3131417</color>
+    <color name="icon_light_quaternary">#52131417</color>
+
+    <!-- Background — only popup changes base (basic_00 → basic_100) -->
+    <color name="background_popup">@color/basic_100</color>
+
+    <!-- Surface — basic/low/container reference different base per mode -->
+    <color name="surface_basic">@color/basic_50</color>
+    <color name="surface_low">@color/basic_00</color>
+    <color name="surface_container">@color/basic_100</color>
+
+    <!-- Overlay — Light: alpha_dark_200, Dark: alpha_dark_500 -->
+    <color name="overlay_default">@color/alpha_dark_500</color>
+
+    <!-- Switch — tokens with different dark base -->
+    <color name="switch_button_off">@color/basic_400</color>
+    <color name="switch_button_disabled">@color/alpha_dark_200</color>
+
+    <!-- Call -->
+    <color name="call_accept_normal">#3BD665</color>
+    <color name="call_accept_pressed">#2DB752</color>
+    <color name="call_end_normal">#FF4C28</color>
+    <color name="call_end_pressed">#DF4323</color>
+
+    <!-- Informative -->
+    <color name="informative_active">#00E074</color>
+    <color name="informative_positive">#0082FF</color>
+    <color name="informative_negative">#FF4C28</color>
+    <color name="informative_autonomous_driving">#6A57FF</color>
+
+    <!-- Regulation -->
+    <color name="regulation_blue">#0082FF</color>
+    <color name="regulation_green">#55F165</color>
+    <color name="regulation_red">#FF4339</color>
+
+    <!-- Charging -->
+    <color name="charging_deep">#0082FC</color>
+
+    <!-- Driving — gearshift references different base -->
+    <color name="gearshift_background">@color/basic_100</color>
+    <color name="gradient_start">#00131417</color>
+    <color name="radio_gradient_start">#001D1E21</color>
+    <color name="radio_gradient_end">#FF1D1E21</color>
+
+    <!-- Controller — different base per mode -->
+    <color name="controller_slider_normal">@color/alpha_dark_100</color>
+    <color name="controller_slider_pressed">@color/alpha_dark_200</color>
+    <color name="controller_slider_knob">@color/alpha_dark_300</color>
+    <color name="controller_stepper_background">@color/alpha_light_100</color>
+
+    <!-- Button — different base per mode -->
+    <color name="button_switch_enabled">@color/alpha_dark_200</color>
+    <color name="button_switch_pressed">@color/alpha_dark_200</color>
+    <color name="button_switch_disabled">@color/alpha_dark_300</color>
+    <color name="button_filled_pressed">@color/basic_500</color>
+
+    <!-- Dropdown — different base per mode -->
+    <color name="dropdown_normal">@color/alpha_dark_100</color>
+    <color name="dropdown_pressed">@color/alpha_dark_300</color>
+
+    <!-- Climate — different base per mode -->
+    <color name="climate_button_enabled">@color/basic_50</color>
+    <color name="climate_button_selected">@color/basic_200</color>
+    <color name="climate_button_border_enabled">@color/alpha_dark_100</color>
+    <color name="climate_toggle_selected">@color/alpha_light_300</color>
+    <color name="climate_toggle_pressed">@color/alpha_light_400</color>
+    <color name="climate_slider_background">@color/basic_100</color>
+    <color name="climate_airvent_button_opened">@color/basic_600</color>
+    <color name="climate_airvent_button_closed">@color/alpha_dark_200</color>
+    <color name="climate_airvent_symbol_closed">@color/static_dark_300</color>
+    <color name="climate_airvent_opened">@color/static_light_400</color>
+    <color name="climate_airvent_closed">@color/alpha_dark_100</color>
+</resources>

@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="io.github.bbang208.spirit.ui.trackcreation.TrackCreationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary">
+
+        <!-- ===== Header: Back + Title ===== -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/pleos_icon_btn_lg"
+            android:layout_height="@dimen/pleos_icon_btn_lg"
+            android:layout_marginStart="@dimen/pleos_spacing_md"
+            android:layout_marginTop="@dimen/pleos_spacing_lg"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cancel"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xs"
+            android:text="@string/title_track_creation"
+            android:textAppearance="@style/TextAppearance.Pleos.Title.Small"
+            android:textColor="@color/text_dark_primary"
+            app:layout_constraintBottom_toBottomOf="@id/btn_back"
+            app:layout_constraintStart_toEndOf="@id/btn_back"
+            app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+        <!-- Status badge (top-right) -->
+        <LinearLayout
+            android:id="@+id/badge_recording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pleos_spacing_lg"
+            android:layout_marginEnd="@dimen/pleos_spacing_xxl"
+            android:background="@drawable/bg_recording_badge"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/pleos_spacing_lg"
+            android:paddingVertical="@dimen/pleos_spacing_sm"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/ic_step_active" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/pleos_spacing_sm"
+                android:text="@string/step_recording"
+                android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                android:textColor="@color/switch_on" />
+
+        </LinearLayout>
+
+        <!-- ===== Progress Stepper ===== -->
+        <LinearLayout
+            android:id="@+id/stepper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xxl"
+            android:layout_marginTop="@dimen/pleos_spacing_md"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_back">
+
+            <!-- Step 1: Idle -->
+            <ImageView
+                android:id="@+id/ic_step_idle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/step_idle"
+                android:src="@drawable/ic_step_active" />
+
+            <TextView
+                android:id="@+id/tv_step_idle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/pleos_spacing_xs"
+                android:text="@string/step_idle"
+                android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                android:textColor="@color/switch_on" />
+
+            <!-- Connector line -->
+            <View
+                android:id="@+id/line_1"
+                android:layout_width="40dp"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="@dimen/pleos_spacing_sm"
+                android:background="@color/surface_accent" />
+
+            <!-- Step 2: Recording -->
+            <ImageView
+                android:id="@+id/ic_step_recording"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/step_recording"
+                android:src="@drawable/ic_step_pending" />
+
+            <TextView
+                android:id="@+id/tv_step_recording"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/pleos_spacing_xs"
+                android:text="@string/step_recording"
+                android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                android:textColor="@color/text_dark_tertiary" />
+
+            <!-- Connector line -->
+            <View
+                android:id="@+id/line_2"
+                android:layout_width="40dp"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="@dimen/pleos_spacing_sm"
+                android:background="@color/surface_accent" />
+
+            <!-- Step 3: Complete -->
+            <ImageView
+                android:id="@+id/ic_step_complete"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/step_complete"
+                android:src="@drawable/ic_step_pending" />
+
+            <TextView
+                android:id="@+id/tv_step_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/pleos_spacing_xs"
+                android:text="@string/step_complete"
+                android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                android:textColor="@color/text_dark_tertiary" />
+
+        </LinearLayout>
+
+        <!-- ===== Left/Right split guideline (60:40) ===== -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <!-- ===== Left Panel: Live Track Map ===== -->
+        <TextView
+            android:id="@+id/tv_map_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xxl"
+            android:layout_marginTop="@dimen/pleos_spacing_lg"
+            android:text="@string/live_track_map"
+            android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+            android:textColor="@color/text_dark_tertiary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stepper" />
+
+        <io.github.bbang208.spirit.ui.widget.TrackMapView
+            android:id="@+id/track_map_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/pleos_spacing_xxl"
+            android:layout_marginTop="@dimen/pleos_spacing_sm"
+            android:layout_marginEnd="@dimen/pleos_spacing_lg"
+            android:layout_marginBottom="@dimen/pleos_spacing_xxl"
+            android:background="@drawable/bg_stat_card"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_map_label" />
+
+        <!-- ===== Right Panel: State-dependent content ===== -->
+
+        <!-- IDLE state: Start Recording button (centered) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start_recording"
+            style="@style/Widget.Pleos.Button.Secondary.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_lg"
+            android:layout_marginEnd="@dimen/pleos_spacing_xxl"
+            android:minHeight="125dp"
+            android:text="@string/start_recording"
+            android:textColor="@color/text_dark_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintTop_toBottomOf="@id/stepper" />
+
+        <!-- RECORDING state container -->
+        <LinearLayout
+            android:id="@+id/recording_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/pleos_spacing_lg"
+            android:layout_marginTop="@dimen/pleos_spacing_lg"
+            android:layout_marginEnd="@dimen/pleos_spacing_xxl"
+            android:layout_marginBottom="@dimen/pleos_spacing_xxl"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintTop_toBottomOf="@id/stepper">
+
+            <!-- TOTAL DISTANCE card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_stat_card"
+                android:orientation="vertical"
+                android:padding="@dimen/pleos_spacing_lg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_distance_label"
+                    android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                    android:textColor="@color/text_dark_tertiary" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pleos_spacing_xs"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_recording_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Pleos.Headline.Small"
+                        android:textColor="@color/text_dark_primary"
+                        tools:text="2.847" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/pleos_spacing_sm"
+                        android:layout_marginBottom="@dimen/pleos_spacing_sm"
+                        android:text="@string/unit_km"
+                        android:textAppearance="@style/TextAppearance.Pleos.Label.Medium"
+                        android:textColor="@color/text_dark_tertiary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pleos_spacing_md" />
+
+            <!-- GPS POINTS card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_stat_card"
+                android:orientation="vertical"
+                android:padding="@dimen/pleos_spacing_lg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gps_points_label"
+                    android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                    android:textColor="@color/text_dark_tertiary" />
+
+                <TextView
+                    android:id="@+id/tv_gps_points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pleos_spacing_xs"
+                    android:textAppearance="@style/TextAppearance.Pleos.Title.Medium"
+                    android:textColor="@color/text_dark_primary"
+                    tools:text="1,247" />
+
+            </LinearLayout>
+
+            <android.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pleos_spacing_md" />
+
+            <!-- LOOP CLOSURE card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_stat_card"
+                android:orientation="vertical"
+                android:padding="@dimen/pleos_spacing_lg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loop_closure_label"
+                    android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                    android:textColor="@color/text_dark_tertiary" />
+
+                <!-- Progress bar + distance label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pleos_spacing_md"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/progress_loop"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/pleos_spacing_sm"
+                        android:layout_weight="1"
+                        android:max="1000"
+                        android:progressDrawable="@android:drawable/progress_horizontal"
+                        android:progressTint="@color/switch_on"
+                        android:progressBackgroundTint="@color/surface_accent" />
+
+                    <TextView
+                        android:id="@+id/tv_loop_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/pleos_spacing_md"
+                        android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                        android:textColor="@color/text_dark_tertiary"
+                        tools:text="127m" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pleos_spacing_sm"
+                    android:text="@string/loop_closure_hint"
+                    android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                    android:textColor="@color/text_dark_tertiary" />
+
+            </LinearLayout>
+
+            <android.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Stop Recording button (red) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel_recording"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/pleos_btn_height_lg"
+                android:text="@string/stop_recording"
+                android:textAppearance="@style/TextAppearance.Pleos.Body.Medium.Strong"
+                android:textColor="@color/text_dark_primary"
+                app:backgroundTint="@color/call_end_normal"
+                app:icon="@drawable/ic_stop_square"
+                app:iconGravity="textStart"
+                app:iconTint="@color/text_light_primary"
+                app:shapeAppearance="@style/ShapeAppearance.Pleos.Pill" />
+
+        </LinearLayout>
+
+        <!-- COMPLETED state container -->
+        <LinearLayout
+            android:id="@+id/completed_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/pleos_spacing_lg"
+            android:layout_marginTop="@dimen/pleos_spacing_lg"
+            android:layout_marginEnd="@dimen/pleos_spacing_xxl"
+            android:layout_marginBottom="@dimen/pleos_spacing_xxl"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintTop_toBottomOf="@id/stepper">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Pleos.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/track_name_hint"
+                app:boxBackgroundColor="@color/surface_basic"
+                app:boxStrokeColor="@color/divider_tertiary"
+                app:hintTextColor="@color/text_light_tertiary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_track_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@color/text_dark_primary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Sector count stepper -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pleos_spacing_xxl"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sector_count"
+                    android:textAppearance="@style/TextAppearance.Pleos.Body.Large"
+                    android:textColor="@color/text_dark_primary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_sector_minus"
+                    style="@style/Widget.Pleos.IconButton.Circle"
+                    android:layout_width="@dimen/pleos_icon_btn_md"
+                    android:layout_height="@dimen/pleos_icon_btn_md"
+                    android:backgroundTint="@color/surface_high"
+                    android:text="-"
+                    android:textColor="@color/text_dark_primary"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tv_sector_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minWidth="56dp"
+                    android:textAppearance="@style/TextAppearance.Pleos.Body.Large.Strong"
+                    android:textColor="@color/text_dark_primary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_sector_plus"
+                    style="@style/Widget.Pleos.IconButton.Circle"
+                    android:layout_width="@dimen/pleos_icon_btn_md"
+                    android:layout_height="@dimen/pleos_icon_btn_md"
+                    android:backgroundTint="@color/surface_high"
+                    android:text="+"
+                    android:textColor="@color/text_dark_primary"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save_track"
+                style="@style/Widget.Pleos.Button.Secondary.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pleos_spacing_xxxl"
+                android:minHeight="125dp"
+                android:text="@string/save_track"
+                android:textColor="@color/text_dark_primary" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ================================================================ -->
+    <!-- Pleos Design System Colors                                       -->
+    <!-- Base tokens = HEX (Light mode values)                            -->
+    <!-- Semantic tokens = @color/ ref if same base token in both modes,  -->
+    <!--                   HEX if mode-specific                           -->
+    <!-- ================================================================ -->
+
+    <!-- ===== Base Tokens (mode-variable, overridden in values-night) ===== -->
+
+    <!-- Basic (Grayscale) — inverted in Dark mode -->
+    <color name="basic_00">#FFFFFF</color>
+    <color name="basic_50">#F7F8FA</color>
+    <color name="basic_100">#EDEEF2</color>
+    <color name="basic_200">#E0E1E6</color>
+    <color name="basic_300">#C7C9CE</color>
+    <color name="basic_400">#A4A8AE</color>
+    <color name="basic_500">#686A72</color>
+    <color name="basic_600">#44464E</color>
+    <color name="basic_700">#313236</color>
+    <color name="basic_800">#1D1E21</color>
+    <color name="basic_900">#131417</color>
+
+    <!-- Alpha / Dark — inverted in Dark mode (becomes white-based) -->
+    <color name="alpha_dark_50">#0D131417</color>
+    <color name="alpha_dark_100">#1A131417</color>
+    <color name="alpha_dark_200">#33131417</color>
+    <color name="alpha_dark_300">#4D131417</color>
+    <color name="alpha_dark_400">#66131417</color>
+    <color name="alpha_dark_500">#80131417</color>
+
+    <!-- Alpha / Light — inverted in Dark mode (becomes dark-based) -->
+    <color name="alpha_light_50">#0DFFFFFF</color>
+    <color name="alpha_light_100">#1AFFFFFF</color>
+    <color name="alpha_light_200">#33FFFFFF</color>
+    <color name="alpha_light_300">#4DFFFFFF</color>
+    <color name="alpha_light_400">#66FFFFFF</color>
+    <color name="alpha_light_500">#80FFFFFF</color>
+
+    <!-- ===== Static Tokens (mode-INvariant, NOT overridden in night) ===== -->
+
+    <!-- Static / Light -->
+    <color name="static_light_100">#FFFFFF</color>
+    <color name="static_light_200">#D6FFFFFF</color>
+    <color name="static_light_300">#A3FFFFFF</color>
+    <color name="static_light_400">#52FFFFFF</color>
+
+    <!-- Static / Dark -->
+    <color name="static_dark_100">#131417</color>
+    <color name="static_dark_200">#D6131417</color>
+    <color name="static_dark_300">#A3131417</color>
+    <color name="static_dark_400">#52131417</color>
+
+    <!-- ===== Semantic Tokens ===== -->
+
+    <!-- Text / Dark — different base per mode, needs night override -->
+    <color name="text_dark_primary">#131417</color>
+    <color name="text_dark_secondary">#D6131417</color>
+    <color name="text_dark_tertiary">#A3131417</color>
+    <color name="text_dark_quaternary">#52131417</color>
+
+    <!-- Text / Light — different base per mode -->
+    <color name="text_light_primary">#FFFFFF</color>
+    <color name="text_light_secondary">#D6FFFFFF</color>
+    <color name="text_light_tertiary">#A3FFFFFF</color>
+    <color name="text_light_quaternary">#52FFFFFF</color>
+
+    <!-- Icon / Dark — different base per mode -->
+    <color name="icon_dark_primary">#131417</color>
+    <color name="icon_dark_secondary">#D6131417</color>
+    <color name="icon_dark_tertiary">#A3131417</color>
+    <color name="icon_dark_quaternary">#52131417</color>
+
+    <!-- Icon / Light — different base per mode -->
+    <color name="icon_light_primary">#FFFFFF</color>
+    <color name="icon_light_secondary">#D6FFFFFF</color>
+    <color name="icon_light_tertiary">#A3FFFFFF</color>
+    <color name="icon_light_quaternary">#52FFFFFF</color>
+
+    <!-- Background — primary/secondary = same base both modes (auto-resolve) -->
+    <color name="background_primary">@color/basic_50</color>
+    <color name="background_secondary">@color/basic_00</color>
+    <color name="background_popup">@color/basic_00</color> <!-- Dark: basic_100, needs night override -->
+
+    <!-- Surface — high/accent = same base both modes -->
+    <color name="surface_basic">#FFFFFF</color>       <!-- Light=basic_00, Dark=basic_50→different, needs override -->
+    <color name="surface_low">#F7F8FA</color>          <!-- Light=basic_50, Dark=basic_00→different, needs override -->
+    <color name="surface_high">@color/basic_100</color>
+    <color name="surface_accent">@color/basic_200</color>
+    <color name="surface_container">#1D1E21</color>    <!-- needs override -->
+
+    <!-- Dim / Dark — same base both modes (auto-resolve via alpha override) -->
+    <color name="dim_dark_primary">@color/alpha_dark_50</color>
+    <color name="dim_dark_secondary">@color/alpha_dark_100</color>
+    <color name="dim_dark_tertiary">@color/alpha_dark_200</color>
+
+    <!-- Dim / Light — same base both modes -->
+    <color name="dim_light_primary">@color/alpha_light_500</color>
+    <color name="dim_light_secondary">@color/alpha_light_400</color>
+    <color name="dim_light_tertiary">@color/alpha_light_300</color>
+
+    <!-- Divider — same base both modes -->
+    <color name="divider_primary">@color/alpha_dark_50</color>
+    <color name="divider_secondary">@color/alpha_dark_100</color>
+    <color name="divider_tertiary">@color/alpha_dark_200</color>
+
+    <!-- Overlay — different base per mode -->
+    <color name="overlay_default">@color/alpha_dark_200</color> <!-- Dark: alpha_dark_500, needs override -->
+
+    <!-- Switch — mixed: some same, some different -->
+    <color name="switch_on">#02C265</color>
+    <color name="switch_off">@color/alpha_dark_300</color>          <!-- same base both modes -->
+    <color name="switch_disabled">@color/alpha_dark_100</color>     <!-- same base both modes -->
+    <color name="switch_button_on">@color/basic_00</color>          <!-- same base (auto-resolve) -->
+    <color name="switch_button_off">@color/basic_00</color>         <!-- Dark: basic_400, needs override -->
+    <color name="switch_button_disabled">@color/basic_00</color>    <!-- Dark: alpha_dark_200, needs override -->
+
+    <!-- Call — different base per mode -->
+    <color name="call_accept_normal">#32B957</color>
+    <color name="call_accept_pressed">#279E47</color>
+    <color name="call_end_normal">#FE3D16</color>
+    <color name="call_end_pressed">#E73612</color>
+
+    <!-- Informative — different base per mode -->
+    <color name="informative_active">#02C265</color>
+    <color name="informative_positive">#0064FF</color>
+    <color name="informative_negative">#FE3D16</color>
+    <color name="informative_autonomous_driving">#5A46FA</color>
+
+    <!-- Regulation — some change per mode -->
+    <color name="regulation_blue">#0064FF</color>
+    <color name="regulation_green">#00BA13</color>
+    <color name="regulation_yellow">#FFC224</color>
+    <color name="regulation_orange">#FF8A00</color>
+    <color name="regulation_red">#F62E24</color>
+    <color name="regulation_bluetooth">#0082FC</color>
+
+    <!-- Charging -->
+    <color name="charging_normal">#00DB25</color>
+    <color name="charging_deep">#00B975</color>
+
+    <!-- Driving -->
+    <color name="gearshift_background">@color/basic_900</color>  <!-- Dark: basic_100, needs override -->
+    <color name="gradient_start">#00FFFFFF</color>                 <!-- needs override -->
+    <color name="gradient_end">@color/basic_00</color>            <!-- same base (auto-resolve) -->
+
+    <!-- Feature / Media -->
+    <color name="media_radio_primary">#C911E7</color>
+    <color name="media_music_primary">#4781FF</color>
+    <color name="radio_gradient_start">#00FFFFFF</color>           <!-- needs override -->
+    <color name="radio_gradient_end">#FFFFFFFF</color>             <!-- needs override -->
+
+    <!-- Textfield -->
+    <color name="textfield_background">@color/basic_00</color>    <!-- same base (auto-resolve) -->
+    <color name="field_focused">@color/basic_700</color>          <!-- same base (auto-resolve) -->
+
+    <!-- Controller — mixed -->
+    <color name="controller_slider_normal">@color/alpha_dark_200</color>  <!-- Dark: alpha_dark_100, needs override -->
+    <color name="controller_slider_pressed">@color/alpha_dark_300</color> <!-- Dark: alpha_dark_200, needs override -->
+    <color name="controller_slider_knob">@color/basic_00</color>          <!-- Dark: alpha_dark_300, needs override -->
+    <color name="controller_tab_background">@color/alpha_dark_50</color>  <!-- same base (auto-resolve) -->
+    <color name="controller_stepper_background">@color/basic_00</color>   <!-- Dark: alpha_light_100, needs override -->
+
+    <!-- Button — mixed -->
+    <color name="button_basic_enabled">@color/alpha_dark_50</color>       <!-- same base (auto-resolve) -->
+    <color name="button_basic_pressed">@color/alpha_dark_100</color>      <!-- same base (auto-resolve) -->
+    <color name="button_basic_disabled">@color/alpha_light_200</color>    <!-- same base (auto-resolve) -->
+    <color name="button_switch_enabled">@color/basic_00</color>           <!-- Dark: alpha_dark_200, needs override -->
+    <color name="button_switch_pressed">@color/alpha_light_500</color>    <!-- Dark: alpha_dark_200, needs override -->
+    <color name="button_switch_disabled">@color/alpha_light_300</color>   <!-- Dark: alpha_dark_300, needs override -->
+    <color name="button_filled_enabled">@color/basic_600</color>          <!-- same base (auto-resolve) -->
+    <color name="button_filled_pressed">@color/basic_700</color>          <!-- Dark: basic_500, needs override -->
+    <color name="button_filled_disabled">@color/alpha_dark_50</color>     <!-- same base (auto-resolve) -->
+
+    <!-- Dropdown — different base per mode -->
+    <color name="dropdown_normal">@color/basic_00</color>          <!-- Dark: alpha_dark_100, needs override -->
+    <color name="dropdown_pressed">@color/basic_100</color>        <!-- Dark: alpha_dark_300, needs override -->
+
+    <!-- Climate -->
+    <color name="climate_button_enabled">@color/basic_200</color>            <!-- Dark: basic_50, needs override -->
+    <color name="climate_button_selected">@color/basic_00</color>            <!-- Dark: basic_200, needs override -->
+    <color name="climate_button_border_enabled">@color/alpha_dark_200</color> <!-- Dark: alpha_dark_100, needs override -->
+    <color name="climate_button_border_disabled">@color/alpha_dark_50</color> <!-- same base (auto-resolve) -->
+    <color name="climate_toggle_selected">@color/alpha_dark_100</color>      <!-- Dark: alpha_light_300, needs override -->
+    <color name="climate_toggle_pressed">@color/alpha_dark_200</color>       <!-- Dark: alpha_light_400, needs override -->
+    <color name="climate_slider_background">@color/basic_00</color>          <!-- Dark: basic_100, needs override -->
+    <color name="climate_airvent_button_opened">@color/basic_00</color>      <!-- Dark: basic_600, needs override -->
+    <color name="climate_airvent_button_closed">@color/alpha_dark_400</color> <!-- Dark: alpha_dark_200, needs override -->
+    <color name="climate_airvent_symbol_opened">@color/static_dark_200</color> <!-- static = mode-invariant, same -->
+    <color name="climate_airvent_symbol_closed">@color/static_dark_400</color> <!-- Dark: static_dark_300, needs override -->
+    <color name="climate_airvent_opened">@color/static_light_300</color>     <!-- Dark: static_light_400, needs override -->
+    <color name="climate_airvent_closed">@color/alpha_light_200</color>      <!-- Dark: alpha_dark_100, needs override -->
+
+    <!-- Keyboard / Normal -->
+    <color name="keyboard_normal_primary_normal">#FFFFFF</color>
+    <color name="keyboard_normal_primary_pressed">#EDEEF2</color>
+    <color name="keyboard_normal_secondary_normal">#C7C9CE</color>
+    <color name="keyboard_normal_secondary_pressed">#A4A8AE</color>
+    <color name="keyboard_normal_active_normal">#44464E</color>
+    <color name="keyboard_normal_active_pressed">#313236</color>
+    <color name="keyboard_normal_accents_normal">#44464E</color>
+    <color name="keyboard_normal_accents_pressed">#313236</color>
+    <color name="keyboard_normal_background">#E0E1E6</color>
+
+    <!-- Keyboard / Static (mode-invariant) -->
+    <color name="keyboard_static_primary_normal">#686A72</color>
+    <color name="keyboard_static_primary_pressed">#44464E</color>
+    <color name="keyboard_static_background">#131417</color>
+    <color name="keyboard_static_text">#FFFFFF</color>
+</resources>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="io.github.bbang208.spirit.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_to_trackSelect"
+            app:destination="@id/trackSelectFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_to_sessionDetail"
+            app:destination="@id/sessionDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_to_settings"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/trackSelectFragment"
+        android:name="io.github.bbang208.spirit.ui.trackselect.TrackSelectFragment"
+        android:label="@string/title_track_select"
+        tools:layout="@layout/fragment_track_select">
+
+        <action
+            android:id="@+id/action_trackSelect_to_preSession"
+            app:destination="@id/preSessionFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_trackSelect_to_trackCreation"
+            app:destination="@id/trackCreationFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="trackId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/trackCreationFragment"
+        android:name="io.github.bbang208.spirit.ui.trackcreation.TrackCreationFragment"
+        android:label="@string/title_track_creation"
+        tools:layout="@layout/fragment_track_creation" />
+
+    <fragment
+        android:id="@+id/preSessionFragment"
+        android:name="io.github.bbang208.spirit.ui.presession.PreSessionFragment"
+        android:label="@string/title_pre_session"
+        tools:layout="@layout/fragment_pre_session">
+
+        <argument
+            android:name="trackId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_preSession_to_liveTiming"
+            app:destination="@id/liveTimingFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/liveTimingFragment"
+        android:name="io.github.bbang208.spirit.ui.livetiming.LiveTimingFragment"
+        android:label="@string/title_live_timing"
+        tools:layout="@layout/fragment_live_timing">
+
+        <argument
+            android:name="trackId"
+            app:argType="string" />
+        <argument
+            android:name="sessionId"
+            app:argType="string" />
+        <argument
+            android:name="ghostRunId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_liveTiming_to_sessionSummary"
+            app:destination="@id/sessionSummaryFragment"
+            app:popUpTo="@id/homeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sessionSummaryFragment"
+        android:name="io.github.bbang208.spirit.ui.summary.SessionSummaryFragment"
+        android:label="@string/title_session_summary"
+        tools:layout="@layout/fragment_session_summary">
+
+        <argument
+            android:name="sessionId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_sessionSummary_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sessionDetailFragment"
+        android:name="io.github.bbang208.spirit.ui.detail.SessionDetailFragment"
+        android:label="@string/title_session_detail"
+        tools:layout="@layout/fragment_session_detail">
+
+        <argument
+            android:name="sessionId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="io.github.bbang208.spirit.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>

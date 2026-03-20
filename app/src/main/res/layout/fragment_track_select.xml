@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.github.bbang208.spirit.ui.trackselect.TrackSelectViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary">
+
+        <!-- Page Navigation: Back + Title -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/pleos_icon_btn_lg"
+            android:layout_height="@dimen/pleos_icon_btn_lg"
+            android:layout_marginStart="@dimen/pleos_spacing_md"
+            android:layout_marginTop="@dimen/pleos_spacing_lg"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cancel"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xs"
+            android:text="@string/title_track_select"
+            android:textAppearance="@style/TextAppearance.Pleos.Title.Medium"
+            android:textColor="@color/text_dark_primary"
+            app:layout_constraintBottom_toBottomOf="@id/btn_back"
+            app:layout_constraintStart_toEndOf="@id/btn_back"
+            app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+        <!-- Tab Toggle Group: Official circuits / My tracks / Nearby -->
+        <LinearLayout
+            android:id="@+id/toggle_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xxl"
+            android:layout_marginTop="@dimen/pleos_spacing_lg"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_back">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tab_official"
+                style="@style/Widget.Pleos.ToggleButton.Pill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cornerRadius="@dimen/pleos_radius_md"
+                android:layout_marginEnd="@dimen/pleos_spacing_sm"
+                android:text="@string/tab_preset_circuits" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tab_my_tracks"
+                style="@style/Widget.Pleos.ToggleButton.Pill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cornerRadius="@dimen/pleos_radius_md"
+                android:layout_marginEnd="@dimen/pleos_spacing_sm"
+                android:text="@string/tab_my_tracks" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tab_nearby"
+                app:cornerRadius="@dimen/pleos_radius_md"
+                style="@style/Widget.Pleos.ToggleButton.Pill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_nearby_tracks" />
+
+        </LinearLayout>
+
+        <!-- Track cards (horizontal scroll) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tracks"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/pleos_spacing_xxl"
+            android:layout_marginTop="@dimen/pleos_spacing_lg"
+            android:layout_marginEnd="@dimen/pleos_spacing_xxl"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toTopOf="@id/btn_create_track"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toggle_group"
+            tools:listitem="@layout/item_track_card" />
+
+        <!-- Create new track (dashed border) -->
+        <FrameLayout
+            android:id="@+id/btn_create_track"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_xxl"
+            android:layout_marginEnd="@dimen/pleos_spacing_xxl"
+            android:layout_marginBottom="@dimen/pleos_spacing_xxl"
+            android:background="@drawable/bg_create_track_dashed"
+            android:minHeight="@dimen/pleos_btn_height_lg"
+            android:padding="@dimen/pleos_spacing_lg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/pleos_icon_md"
+                    android:layout_height="@dimen/pleos_icon_md"
+                    android:contentDescription="@string/create_new_track"
+                    android:src="@drawable/ic_plus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pleos_spacing_sm"
+                    android:text="@string/create_new_track"
+                    android:textAppearance="@style/TextAppearance.Pleos.Body.Medium"
+                    android:textColor="@color/switch_on" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

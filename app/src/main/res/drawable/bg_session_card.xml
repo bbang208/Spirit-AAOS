@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Dark card body (full area) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/basic_100" />
+        </shape>
+    </item>
+    <!-- Green left border (strip only) -->
+    <item
+        android:width="4dp"
+        android:gravity="start">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/informative_active" />
+        </shape>
+    </item>
+</layer-list>

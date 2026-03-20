@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="lap"
+            type="io.github.bbang208.spirit.data.source.local.db.entity.LapEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/pleos_spacing_lg"
+        android:paddingVertical="@dimen/pleos_spacing_md">
+
+        <TextView
+            android:id="@+id/tv_lap_index"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Pleos.Feature.ListNumber"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_lap_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pleos_spacing_md"
+            android:textAppearance="@style/TextAppearance.Pleos.Body.Large.Strong"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_delta"
+            app:layout_constraintStart_toEndOf="@id/tv_lap_index"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_delta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/pleos_spacing_md"
+            android:textAppearance="@style/TextAppearance.Pleos.Body.Medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

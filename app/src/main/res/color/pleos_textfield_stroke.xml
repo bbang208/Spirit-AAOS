@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/alpha_dark_100" android:state_enabled="false" />
+    <item android:color="@color/call_end_normal" android:state_activated="true" />
+    <item android:color="@color/basic_900" android:state_focused="true" />
+    <item android:color="@color/basic_300" />
+</selector>

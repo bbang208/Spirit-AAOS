@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Spirit</string>
+
+    <!-- Navigation titles -->
+    <string name="title_home">홈</string>
+    <string name="title_track_select">트랙 선택</string>
+    <string name="title_pre_session">세션 설정</string>
+    <string name="title_live_timing">실시간 타이밍</string>
+    <string name="title_session_summary">세션 요약</string>
+    <string name="title_session_detail">세션 상세</string>
+    <string name="title_settings">설정</string>
+
+    <!-- Home -->
+    <string name="recent_sessions">최근 세션</string>
+    <string name="recent_sessions_label">최근 세션</string>
+    <string name="start_session">세션 시작</string>
+    <string name="no_sessions_yet">세션이 없습니다</string>
+    <string name="app_subtitle">랩 타이머</string>
+    <string name="start_session_subtitle">트랙을 선택하여 타이밍을 시작하세요</string>
+    <string name="best_lap_label">베스트 랩</string>
+
+    <!-- Track Select -->
+    <string name="tab_preset_circuits">공인 서킷</string>
+    <string name="tab_my_tracks">내 트랙</string>
+    <string name="tab_nearby_tracks">주변</string>
+    <string name="track_length_format">%.1f km</string>
+    <string name="track_length_m_format">%dm</string>
+    <string name="create_new_track">새 트랙 만들기</string>
+
+    <!-- Track Creation -->
+    <string name="title_track_creation">트랙 만들기</string>
+    <string name="start_recording">기록 시작</string>
+    <string name="recording_status">기록 중</string>
+    <string name="cancel_recording">취소</string>
+    <string name="track_name_hint">트랙 이름</string>
+    <string name="save_track">트랙 저장</string>
+    <string name="stop_recording">기록 중지</string>
+    <string name="recording_distance_format">%.3f</string>
+    <string name="track_created_toast">트랙이 생성되었습니다</string>
+    <string name="live_track_map">실시간 트랙 맵</string>
+    <string name="total_distance_label">총 거리</string>
+    <string name="gps_points_label">GPS 포인트</string>
+    <string name="loop_closure_label">루프 클로저</string>
+    <string name="loop_closure_hint">출발점에서 50m 이내 시 자동 완성</string>
+    <string name="distance_meters_format">%dm</string>
+    <string name="gps_points_format">%,d</string>
+    <string name="step_idle">대기</string>
+    <string name="step_recording">기록 중</string>
+    <string name="step_complete">완료</string>
+    <string name="unit_km">km</string>
+
+    <!-- Pre-Session -->
+    <string name="session_settings">세션 설정</string>
+    <string name="sector_count">섹터</string>
+    <string name="ghost_mode">고스트 모드</string>
+    <string name="track_map">트랙 맵</string>
+    <string name="go">GO</string>
+
+    <!-- Live Timing -->
+    <string name="lap_number_format">LAP %d</string>
+    <string name="stop_session">세션 종료</string>
+    <string name="stop">정지</string>
+    <string name="waiting_for_start">출발선으로 이동</string>
+
+    <!-- Session Summary -->
+    <string name="total_laps_format">%d 랩</string>
+    <string name="best_lap_format">베스트: %s</string>
+    <string name="save">저장</string>
+    <string name="done">완료</string>
+
+    <!-- Session Detail -->
+    <string name="session_detail_placeholder">세션 상세 정보가 여기에 표시됩니다</string>
+    <string name="delete_session">삭제</string>
+    <string name="delete_confirm_title">세션 삭제</string>
+    <string name="delete_confirm_message">이 세션을 삭제하시겠습니까?</string>
+    <string name="cancel">취소</string>
+
+    <!-- Common -->
+    <string name="lap_index_format">랩 %d</string>
+    <string name="no_best_time">--:--.---</string>
+
+    <!-- Settings -->
+    <string name="speed_unit">속도 단위</string>
+    <string name="unit_kmh">km/h</string>
+    <string name="unit_mph">mph</string>
+
+    <!-- Driving Restriction -->
+    <string name="driving_restriction_message">주차 시 사용 가능</string>
+
+    <!-- Time format -->
+    <string name="time_format_mm_ss_ms">%d:%02d.%03d</string>
+</resources>

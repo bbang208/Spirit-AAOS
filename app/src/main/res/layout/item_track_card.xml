@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="track"
+            type="io.github.bbang208.spirit.data.source.local.db.entity.TrackEntity" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/pleos_spacing_md"
+        android:layout_marginBottom="12dp"
+        app:cardBackgroundColor="@color/background_secondary"
+        app:cardCornerRadius="@dimen/pleos_radius_md"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/pleos_spacing_lg">
+
+            <!-- Track name (left-top) -->
+            <TextView
+                android:id="@+id/tv_track_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/pleos_spacing_md"
+                android:text="@{track.name}"
+                android:textAppearance="@style/TextAppearance.Pleos.Body.Medium"
+                android:textColor="@color/text_dark_primary"
+                app:layout_constraintEnd_toStartOf="@id/tv_track_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Inje Speedium" />
+
+            <!-- Track length (right-top, green) -->
+            <TextView
+                android:id="@+id/tv_track_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_distance_badge"
+                android:includeFontPadding="false"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.Pleos.Label.Medium"
+                android:textColor="@color/informative_active"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="3.908 km" />
+
+            <!-- Track description / address -->
+            <TextView
+                android:id="@+id/tv_track_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pleos_spacing_xs"
+                android:text="@{track.address}"
+                android:textAppearance="@style/TextAppearance.Pleos.Label.Small"
+                android:textColor="@color/text_dark_tertiary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_track_name"
+                tools:text="International circuit, Gangwon" />
+
+            <!-- Track outline preview area -->
+            <FrameLayout
+                android:id="@+id/track_preview"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/pleos_spacing_md"
+                android:background="@drawable/bg_track_preview"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_track_address" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
